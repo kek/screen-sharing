@@ -19,5 +19,5 @@ sleep 2
 open vnc://localhost:5959/
 
 echo "Press enter to close the SSH tunnel"
-read
+read x
 kill $pid

@@ -17,5 +17,5 @@ REMOTE_PORT=5900
 ssh $PROXY -R ${REMOTE_PORT}:localhost:${VNC_SERVER_PORT} -N &
 pid=$!
 echo "Press enter to close the SSH tunnel"
-read
+read x
 kill $pid
