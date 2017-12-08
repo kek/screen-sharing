@@ -3,13 +3,15 @@
 CONFIG=~/.screen-sharing.config
 
 if [ ! -e $CONFIG ]; then
-  echo "In ${CONFIG}, put the contents \"PROXY=<address to proxy host>\""
+  echo "In ${CONFIG}, put the contents \"PROXY=<address to proxy host>\" and also set VNC_SERVER_PORT to the port for the VNC server unless it's the default 5900"
   exit 1
 fi
 
-source $CONFIG
+. $CONFIG
 
-PORT=5900
+if [ "${VNC_SERVER_PORT}" = "" ]; then
+   VNC_SERVER_PORT=5900
+fi
 HOSTPORT=5900
 
-ssh $PROXY -R ${PORT}:localhost:${HOSTPORT} -N
+ssh $PROXY -R ${VNC_SERVER_PORT}:localhost:${HOSTPORT} -N &

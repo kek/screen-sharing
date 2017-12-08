@@ -7,11 +7,11 @@ if [ ! -e $CONFIG ]; then
   exit 1
 fi
 
-source $CONFIG
+. $CONFIG
 
 PORT=5959
 HOSTPORT=5900
 
-ssh $PROXY -L ${PORT}:localhost:${HOSTPORT} -N
+ssh $PROXY -L ${PORT}:localhost:${HOSTPORT} -N &
 
 open vnc://localhost:5959/
