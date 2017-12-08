@@ -1,0 +1,17 @@
+#!/bin/sh
+
+CONFIG=~/.screen-sharing.config
+
+if [ ! -e $CONFIG ]; then
+  echo "In ${CONFIG}, put the contents \"PROXY=<address to proxy host>\""
+  exit 1
+fi
+
+source $CONFIG
+
+PORT=5959
+HOSTPORT=5900
+
+ssh $PROXY -L ${PORT}:localhost:${HOSTPORT} -N
+
+open vnc://localhost:5959/

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CONFIG=~/.screen-sharing.config
+
+if [ ! -e $CONFIG ]; then
+  echo "In ${CONFIG}, put the contents \"PROXY=<address to proxy host>\""
+  exit 1
+fi
+
+source $CONFIG
+
+PORT=5900
+HOSTPORT=5900
+
+ssh $PROXY -R ${PORT}:localhost:${HOSTPORT} -N
