@@ -9,9 +9,15 @@ fi
 
 . $CONFIG
 
-PORT=5959
-HOSTPORT=5900
+LOCAL_PORT=5959
+REMOTE_PORT=5900
 
-ssh $PROXY -L ${PORT}:localhost:${HOSTPORT} -N &
+ssh $PROXY -L ${LOCAL_PORT}:localhost:${REMOTE_PORT} -N &
+pid=$!
 
+sleep 2
 open vnc://localhost:5959/
+
+echo "Press enter to close the SSH tunnel"
+read
+kill $pid

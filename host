@@ -12,6 +12,10 @@ fi
 if [ "${VNC_SERVER_PORT}" = "" ]; then
    VNC_SERVER_PORT=5900
 fi
-HOSTPORT=5900
+REMOTE_PORT=5900
 
-ssh $PROXY -R ${VNC_SERVER_PORT}:localhost:${HOSTPORT} -N &
+ssh $PROXY -R ${REMOTE_PORT}:localhost:${VNC_SERVER_PORT} -N &
+pid=$!
+echo "Press enter to close the SSH tunnel"
+read
+kill $pid
