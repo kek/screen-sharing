@@ -1,13 +1,5 @@
 # Scripts to set up tunneling for VNC or Mac screen sharing
 
-On the host side (which is sharing its screen), run:
-
-`$ ./host`
-
-On the guest side (which is connecting to the shared screen), run:
-
-`$ ./client`
-
 A machine with SSH is needed to act as proxy. It needs to be reachable
 from both the guest and the host.
 
@@ -18,3 +10,11 @@ user, or SSH keys set up).
 
 You can also configure `VNC_SERVER_PORT` on the host side in that same
 file, in case VNC is not running at port `5900`.
+
+After configuring, on the host side (which is sharing its screen), run:
+
+`$ ./host`
+
+On the guest side (which is connecting to the shared screen), run:
+
+`$ ./client`
