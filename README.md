@@ -17,4 +17,4 @@ After configuring, on the host side (which is sharing its screen), run:
 
 On the guest side (which is connecting to the shared screen), run:
 
-`$ ./client`
+`$ ./guest`
