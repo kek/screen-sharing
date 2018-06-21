@@ -1,0 +1,1 @@
+Guest.app/Contents/Resources/script

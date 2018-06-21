@@ -1,0 +1,21 @@
+#!/bin/sh
+
+CONFIG=~/.screen-sharing.config
+
+if [ ! -e $CONFIG ]; then
+  echo "In ${CONFIG}, put the contents \"PROXY=<address to proxy host>\""
+  exit 1
+fi
+
+. $CONFIG
+
+LOCAL_PORT=5959
+REMOTE_PORT=5900
+
+(sleep 2
+echo "Opening vnc://localhost:${LOCAL_PORT}/"
+open vnc://localhost:${LOCAL_PORT}/) &
+
+echo "Starting SSH tunnel to ${PROXY}:${REMOTE_PORT} on local port ${LOCAL_PORT}"
+
+ssh $PROXY -L ${LOCAL_PORT}:localhost:${REMOTE_PORT} -N
