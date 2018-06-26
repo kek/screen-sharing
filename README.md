@@ -32,9 +32,12 @@ or double click the Guest app.
 
 ## Credits
 
-Host icon icons made by Smashicons(https://www.flaticon.com/authors/smashicons)
+Host icon made by Smashicons
+(https://www.flaticon.com/authors/smashicons)
+
 It is licensed by Creative Commons BY 3.0 http://creativecommons.org/licenses/by/3.0/
 
 Guest icon made by Alfredo Hernandez.
 https://www.flaticon.com/authors/alfredo-hernandez
+
 It is licensed by Creative Commons BY 3.0 http://creativecommons.org/licenses/by/3.0/
