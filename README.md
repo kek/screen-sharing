@@ -10,6 +10,14 @@ in `~/.screen-sharing.config` and need to have a method of logging in
 You can also configure `VNC_SERVER_PORT` on the host side in that same
 file, in case VNC is not running at port `5900`.
 
+## Installation
+
+Install the configuration file and your public SSH key by running
+
+`$ ./install.sh`
+
+## Usage
+
 After configuring, on the host side (which is sharing its screen), run:
 
 `$ ./host.sh`
@@ -22,6 +30,7 @@ On the guest side (which is connecting to the shared screen), run:
 
 or double click the Guest app.
 
+## Credits
 
 Host icon icons made by Smashicons(https://www.flaticon.com/authors/smashicons)
 It is licensed by Creative Commons BY 3.0 http://creativecommons.org/licenses/by/3.0/
