@@ -3,7 +3,7 @@
 CONFIG=~/.screen-sharing.config
 
 if [ ! -e $CONFIG ]; then
-  echo "In ${CONFIG}, put the contents \"PROXY=<address to proxy host>\""
+  echo "In ${CONFIG}, put the contents \"PROXY=<username at proxy>@<address to proxy host>\""
   exit 1
 fi
 
